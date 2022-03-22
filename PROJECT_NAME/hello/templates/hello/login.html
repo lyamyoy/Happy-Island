@@ -1,0 +1,18 @@
+{% extends 'hello/base.html' %}
+
+{% block content %}
+    <body class="text-center">
+        {{ context }}
+        <main class="form-signin">
+        <form method="POST">{% csrf_token %}
+            <h1 class="h3 mb-3 fw-normal">Please login</h1>
+            <label for="inputEmail" class="visually-hidden">Email address</label>
+            <input type="text" id="inputEmail" class="form-control" placeholder="username" name ="username" required autofocus>
+            <label for="inputPassword" class="visually-hidden">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name ="password" required>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">login</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+        </form>
+        </main>
+    </body>
+{% endblock content %}
