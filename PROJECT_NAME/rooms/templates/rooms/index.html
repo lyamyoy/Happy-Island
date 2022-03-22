@@ -1,0 +1,14 @@
+{% extends "rooms/layout.html" %}
+
+{% block main %}
+  <h1>Rooms</h1>
+  <ul>
+    {% for room in rooms %}
+      <li>
+        <a href="{% url 'room' room.id %}">
+          Room {{ room.id }}: {{ room.room_name }}({{ room.member }}people)
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
