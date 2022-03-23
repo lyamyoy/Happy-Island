@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class NewyearConfig(AppConfig):
+class RoomsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'newyear'
+    name = 'rooms'
