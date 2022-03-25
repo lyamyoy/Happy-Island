@@ -1,6 +1,6 @@
-{% extends 'hello/base.html' %}
+{% extends 'rooms/layout.html' %}
 
-{% block content %}
+{% block main %}
     <body class="text-center">
         {{ context }}
         <main class="form-signin">
@@ -11,8 +11,7 @@
             <label for="inputPassword" class="visually-hidden">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" name ="password" required>
             <button class="w-100 btn btn-lg btn-primary" type="submit">login</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
         </form>
         </main>
     </body>
-{% endblock content %}
+{% endblock %}

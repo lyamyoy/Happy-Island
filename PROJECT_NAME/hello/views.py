@@ -9,16 +9,21 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 
+def index(request):
+  return redirect("login")
+
+
 def signup(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
         try:
             user = User.objects.create_user(username, '', password)
-            return render(request, 'hello/signup.html', {'some': 100})
+            return redirect('login')
         except IntegrityError:
             return render(request, 'hello/signup.html', {'error': 'このユーザーはすでに登録されています'})
-    return render(request, 'hello/signup.html')
+    else:        
+        return render(request, 'hello/signup.html')
 
 
 def user_login(request):
@@ -29,12 +34,14 @@ def user_login(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page.
-            return redirect('list')
+            return redirect('../list')
 
         else:
             # Return an 'invalid login' error message.
-            return render(request, 'hello/login.html', {})
-    return render(request, 'hello/login.html', {})
+            return redirect('../list')
+
+    else:
+        return render(request, 'hello/login.html', {})
 
 def list(request):
     object_list = Model.objects.all()
