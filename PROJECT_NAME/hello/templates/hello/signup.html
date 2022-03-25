@@ -1,11 +1,6 @@
-{% extends 'hello/base.html' %}
-{% load static %}
+{% extends 'rooms/layout.html' %}
 
-{% block customcss %}
-<link href="{% static 'style.css' %}" rel="stylesheet">
-{% endblock customcss %}
-
-{% block content %}
+{% block main %}
     <body class="text-center">
         {{ error }}
         <main class="form-signin">
@@ -16,8 +11,7 @@
             <label for="inputPassword" class="visually-hidden">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" name ="password" required>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
         </form>
         </main>
     </body>
-{% endblock content %}
+{% endblock%}
